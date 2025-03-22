@@ -1,1 +1,21 @@
-<p>card works!</p>
+<!-- <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+    <div class="flex justify-center w-16 h-8 items-center m-1 font-medium py-1 px-2 bg-white rounded-lg text-gray-700 border border-gray-300">
+        <div class="text-xs font-normal leading-none flex-initial">Film</div>
+    </div>
+    
+    @for (entrie of entries; track entries){
+        <p class="mb-2 text-sm font-normal text-gray-700">{{ entrie[0] }} : {{ entrie[1]}}</p>
+    }
+</div> -->
+@if (type === 'film') {
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{data!.title}}</h5>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">{{data!.opening_crawl}}</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Director: {{data!.director}}</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Producer: {{data!.producer}}</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Release date: {{data!.release_date}}</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Characters</p>
+    </div> 
+}

@@ -1,1 +1,5 @@
-<p>films-page works!</p>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    @for (film of filmsList; track film) {
+        <app-card [data]="film" [type]="'film'"></app-card>
+    }
+</div>
