@@ -4,7 +4,6 @@ import { BaseApiService } from '../../../global/services/base-api.service';
 import { Film } from '../models/film.model';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../../../global/models/api-response.model';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

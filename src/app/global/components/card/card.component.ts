@@ -1,13 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { Film } from '../../../modules/films/models/film.model';
+import { Character } from '../../../modules/characters/models/character.model';
+
 
 @Component({
   selector: 'app-card',
-  imports: [],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  @Input() data: Film | undefined;
+  @Input() data!: any;
   @Input() type: string | undefined;
 }

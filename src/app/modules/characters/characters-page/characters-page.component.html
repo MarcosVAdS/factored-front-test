@@ -1,1 +1,5 @@
-<p>characters-page works!</p>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    @for (character of charactersList; track character) {
+        <app-card [data]="character" [type]="'character'"></app-card>
+    }
+</div>
