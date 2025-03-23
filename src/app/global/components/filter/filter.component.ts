@@ -16,5 +16,4 @@ export class FilterComponent {
   onSearch() {
     this.searchOutput.emit(this.search)
   }
-
 }
