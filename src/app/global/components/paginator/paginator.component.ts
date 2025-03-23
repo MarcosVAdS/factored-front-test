@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
   templateUrl: './paginator.component.html',
   styleUrl: './paginator.component.css'
 })
-export class PaginatorComponent implements OnChanges {
+export class PaginatorComponent implements OnInit {
 
   @Input() next: string | null = '';
   @Input() previous: string | null = '';
@@ -16,14 +16,15 @@ export class PaginatorComponent implements OnChanges {
 
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnInit(): void {
     if (this.count) {
       this.totalPages = new Array(Math.ceil(this.count / this.pageSize));
     }
   }
 
-  goToPage(value: number | null): void {
-    if (value) {
+  goToPage(value: number): void {
+    if (value <= this.totalPages.length && value >= 1) {
+      this.page = value;
       this.pageChange.emit(value);
     }
   }

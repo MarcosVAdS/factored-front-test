@@ -7,10 +7,12 @@
         }
     </div>
     
-    <app-paginator [next]="charactersResponse.next"
-        [previous]="charactersResponse.previous"
-        [count]="charactersResponse.count"
-        [pageSize]="charactersResponse.results.length"
-        (pageChange)="onPageChange($event)">
-    </app-paginator>
+    @if (charactersResponse.count > 0) {
+        <app-paginator [next]="charactersResponse.next"
+            [previous]="charactersResponse.previous"
+            [count]="charactersResponse.count"
+            [pageSize]="charactersResponse.results.length"
+            (pageChange)="onPageChange($event)">
+        </app-paginator>
+    }
 </div>

@@ -5,11 +5,12 @@ import { PaginatorComponent } from '../../../global/components/paginator/paginat
 import { FilterComponent } from '../../../global/components/filter/filter.component';
 import { ApiResponse } from '../../../global/models/api-response.model';
 import { Character } from '../models/character.model';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-characters-page',
-  imports: [CardComponent, PaginatorComponent, FilterComponent],
+  imports: [CardComponent, PaginatorComponent, FilterComponent, CommonModule],
   templateUrl: './characters-page.component.html',
   styleUrl: './characters-page.component.css'
 })
