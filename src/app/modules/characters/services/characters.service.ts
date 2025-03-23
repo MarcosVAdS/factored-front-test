@@ -14,8 +14,8 @@ export class CharactersService extends BaseApiService<Character>{
     super(http, 'https://swapi.dev/api/');
   }
 
-  getCharactersList(): Observable<ApiResponse<Character[]>> { 
-    return this.get('/people', true) as Observable<ApiResponse<Character[]>>;
+  getCharactersList(page: string = ''): Observable<ApiResponse<Character[]>> { 
+    return this.get(`/people/?page=${page}`, true) as Observable<ApiResponse<Character[]>>;
   }
 
   getCharacterDetails(id: number): Observable<Character> {

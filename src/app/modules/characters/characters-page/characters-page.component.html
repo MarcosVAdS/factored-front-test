@@ -1,5 +1,14 @@
-<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-    @for (character of charactersList; track character) {
-        <app-card [data]="character" [type]="'character'"></app-card>
-    }
+<div class="flex flex-col items-center"> 
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 justify-stretch mb-4">
+        @for (character of charactersResponse.results; track character) {
+            <app-card [data]="character" [type]="'character'"></app-card>
+        }
+    </div>
+    
+    <app-paginator [next]="charactersResponse.next"
+        [previous]="charactersResponse.previous"
+        [count]="charactersResponse.count"
+        [pageSize]="charactersResponse.results.length"
+        (pageChange)="onPageChange($event)"
+        ></app-paginator>
 </div>
