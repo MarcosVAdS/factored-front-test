@@ -8,30 +8,35 @@ import { Character } from '../models/character.model';
 import { CommonModule } from '@angular/common';
 import { SkeletonComponent } from '../../../global/components/skeleton/skeleton.component';
 
-
 @Component({
   selector: 'app-characters-page',
-  imports: [CardComponent, PaginatorComponent, FilterComponent, CommonModule, SkeletonComponent],
-  templateUrl: './characters-page.component.html'
+  imports: [
+    CardComponent,
+    PaginatorComponent,
+    FilterComponent,
+    CommonModule,
+    SkeletonComponent,
+  ],
+  templateUrl: './characters-page.component.html',
 })
-export class CharactersPageComponent implements OnInit{
+export class CharactersPageComponent implements OnInit {
   loading: boolean = true;
 
   charactersResponse: ApiResponse<Character[]> = {
     count: 0,
     next: '',
     previous: '',
-    results: []
+    results: [],
   };
 
   filteredCharactersResponse: ApiResponse<Character[]> = {
     count: 0,
     next: '',
     previous: '',
-    results: []
+    results: [],
   };
 
-  constructor(private charactersService: CharactersService) { }
+  constructor(private charactersService: CharactersService) {}
 
   ngOnInit(): void {
     this.loadCharacters();
@@ -48,20 +53,21 @@ export class CharactersPageComponent implements OnInit{
       },
       complete: () => {
         this.loading = false;
-      }
+      },
     });
   }
 
   onSearch(search: string): void {
-    if(search === '') {
+    if (search === '') {
       this.loadCharacters();
       return;
     }
-    this.filteredCharactersResponse.results = this.charactersResponse.results.filter((item: Record<string, any>) =>
-      Object.values(item).some((value: any) =>
-      String(value).toLowerCase().includes(search.toLowerCase())
-      )
-    );
+    this.filteredCharactersResponse.results =
+      this.charactersResponse.results.filter((item: Record<string, any>) =>
+        Object.values(item).some((value: any) =>
+          String(value).toLowerCase().includes(search.toLowerCase()),
+        ),
+      );
   }
 
   onPageChange(page: number): void {

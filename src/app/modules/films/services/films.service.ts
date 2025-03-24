@@ -7,10 +7,9 @@ import { ApiResponse } from '../../../global/models/api-response.model';
 import { environment } from '../../../../environments/environment.development';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class FilmsService extends BaseApiService<Film>{
-
+export class FilmsService extends BaseApiService<Film> {
   constructor(protected override http: HttpClient) {
     super(http, environment.starWarsApiUrl);
   }

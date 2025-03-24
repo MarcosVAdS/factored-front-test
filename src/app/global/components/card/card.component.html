@@ -7,33 +7,65 @@
         <p class="mb-2 text-sm font-normal text-gray-700">{{ entrie[0] }} : {{ entrie[1]}}</p>
     }
 </div> -->
-@if (type === 'film') {
-    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{data.title}}</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">{{data.opening_crawl}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Director: {{data.director}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Producer: {{data.producer}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Release date: {{data.release_date}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Characters</p>
-    </div> 
+@if (type === "film") {
+  <div
+    class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+  >
+    <a href="#">
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        {{ data.title }}
+      </h5>
+    </a>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
+      {{ data.opening_crawl }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Director: {{ data.director }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Producer: {{ data.producer }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Release date: {{ data.release_date }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Characters</p>
+  </div>
 }
 
-@if (type === 'character') {
-    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{data.name}}</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Heigh: {{data.height}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Mass: {{data.mass}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Hair Color: {{data.hair_color}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Skin Color: {{data.skin_color}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Eye Color: {{data.eye_color}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Birth Year: {{data.birth_year}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Gender: {{data.gender}}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Films</p>
-    </div>
+@if (type === "character") {
+  <div
+    class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+  >
+    <a href="#">
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        {{ data.name }}
+      </h5>
+    </a>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Heigh: {{ data.height }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Mass: {{ data.mass }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Hair Color: {{ data.hair_color }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Skin Color: {{ data.skin_color }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Eye Color: {{ data.eye_color }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Birth Year: {{ data.birth_year }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      Gender: {{ data.gender }}
+    </p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Films</p>
+  </div>
 }
-    
-    

@@ -7,16 +7,17 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment.development';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CharactersService extends BaseApiService<Character>{
-
+export class CharactersService extends BaseApiService<Character> {
   constructor(protected override http: HttpClient) {
     super(http, environment.starWarsApiUrl);
   }
 
-  getCharactersList(page: string = ''): Observable<ApiResponse<Character[]>> { 
-    return this.get(`/people/?page=${page}`, true) as Observable<ApiResponse<Character[]>>;
+  getCharactersList(page: string = ''): Observable<ApiResponse<Character[]>> {
+    return this.get(`/people/?page=${page}`, true) as Observable<
+      ApiResponse<Character[]>
+    >;
   }
 
   getCharacterDetails(id: number): Observable<Character> {

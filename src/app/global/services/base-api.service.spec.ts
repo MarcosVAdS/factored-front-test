@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 
 import { BaseApiService } from './base-api.service';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
@@ -27,7 +30,11 @@ describe('BaseApiService', () => {
       providers: [
         provideHttpClient(),
         provideHttpClientTesting(),
-        { provide: BaseApiService, useFactory: (http: HttpClient) => new MockBaseApiService(http), deps: [HttpClient] }
+        {
+          provide: BaseApiService,
+          useFactory: (http: HttpClient) => new MockBaseApiService(http),
+          deps: [HttpClient],
+        },
       ],
     });
 
@@ -44,7 +51,7 @@ describe('BaseApiService', () => {
   });
 
   it('should fetch a item', () => {
-    service.get(urlMock, false).subscribe(item => {
+    service.get(urlMock, false).subscribe((item) => {
       expect(item).toEqual(mockItem);
     });
     const req = httpMock.expectOne(urlMock);
@@ -58,9 +65,9 @@ describe('BaseApiService', () => {
       count: 2,
       next: null,
       previous: null,
-      results: []
+      results: [],
     };
-    service.get(urlMock, true).subscribe(items => {
+    service.get(urlMock, true).subscribe((items) => {
       expect(items).toEqual(mockItems);
     });
     const req = httpMock.expectOne(urlMock);

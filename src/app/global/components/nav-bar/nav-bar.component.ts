@@ -4,10 +4,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav-bar',
   imports: [],
-  templateUrl: './nav-bar.component.html'
+  templateUrl: './nav-bar.component.html',
 })
 export class NavBarComponent {
-  
   constructor(private router: Router) {}
 
   goToRoute(route: string) {

@@ -10,9 +10,8 @@ describe('CharactersPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [provideHttpClient()],
-      imports: [CharactersPageComponent]
-    })
-    .compileComponents();
+      imports: [CharactersPageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CharactersPageComponent);
     component = fixture.componentInstance;
