@@ -1,59 +1,61 @@
-# FactoredFrontTest
+## Factored homework test
+Project developed as homework test to [Factored](https://www.factored.ai/)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+## 💻 Tech stack:
+ - Front end developed with [Angular](https://v18.angular.dev/)
+ - Containerization with [Docker](https://www.docker.com/)
+ - DevContainers from ['Vscode'](https://code.visualstudio.com/docs/devcontainers/containers)
+ - Styling with [Tailwind](https://tailwindcss.com/)
+ - Code formatting with [Prettier](https://prettier.io)
+ - Linting with [ESLint](https://eslint.org)
+ - Static types with [TypeScript](https://typescriptlang.org)
 
-## Development server
+## 🛠️ Setup & Installation:
+ - **1. Clone the repo:**
+    ``` sh
+    git clone [git@github.com:MarcosVAdS/factored-front-test.git](https://github.com/MarcosVAdS/factored-front-test.git)
+    ```
 
-To start a local development server, run:
+ - **Docker and [DevConainers](https://code.visualstudio.com/docs/devcontainers/containers)** <br> 
+    To use docker to run the project, open the content folder on vscode, click the bottom left corner and select the option to reopen in container.
 
-```bash
-ng serve
+ - **CLI:** <br>
+    To use the CLI or terminal to start the project you must configure your environment and to do this you must:
+      - Install node by following the documentation available on the node page. [node](https://nodejs.org/en/download)<br>
+      - For this project node version 22.14 was used.
+      - Install the Angular CLI:
+        ``` sh
+        npm install -g @angular/cli
+        ```
+
+ - With your environment ready you can open your terminal on vscode or locally and:
+    - install your dependencies:
+    ``` sh
+        npm install
+    ```
+    - start de development server:
+    ``` sh
+        ng serve
+    ```
+
+## 🧪 Running Tests:
+To run the tests inside the environment run:
+``` sh
+    ng test
+``` 
+
+## 🛠️ Environment Config:
+For custom environment configurations, update:
+```
+    /src/environments/environment.ts
+    /src/environments/environment.prod.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📝 Improvement points:
+- Add more unit tests to improve the code quality.
+- With Docker file, create an CI/CD on Github Actions to deploy the project.
+- Improved documentation using Gitpod for project testing and cloud code.
+- Improve the error treatment on Http requests.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📽️ Project video: 
+You can watch the result on [link]()
