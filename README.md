@@ -58,4 +58,4 @@ For custom environment configurations, update:
 - Improve the error treatment on Http requests.
 
 ## 📽️ Project video: 
-You can watch the result on [link]()
+You can watch the result on [link](https://youtu.be/jkSrB2BnjZQ)
