@@ -4,6 +4,7 @@ import { BaseApiService } from '../../../global/services/base-api.service';
 import { ApiResponse } from '../../../global/models/api-response.model';
 import { Character } from '../models/character.model';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
 export class CharactersService extends BaseApiService<Character>{
 
   constructor(protected override http: HttpClient) {
-    super(http, 'https://swapi.dev/api/');
+    super(http, environment.starWarsApiUrl);
   }
 
   getCharactersList(page: string = ''): Observable<ApiResponse<Character[]>> { 
