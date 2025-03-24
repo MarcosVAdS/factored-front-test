@@ -1,0 +1,7 @@
+{
+    "name": "Factored technical test",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "node"
+}
