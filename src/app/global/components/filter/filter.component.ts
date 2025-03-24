@@ -4,8 +4,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-filter',
   imports: [FormsModule],
-  templateUrl: './filter.component.html',
-  styleUrl: './filter.component.css'
+  templateUrl: './filter.component.html'
 })
 export class FilterComponent {
 

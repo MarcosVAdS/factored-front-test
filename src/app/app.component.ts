@@ -5,8 +5,7 @@ import { NavBarComponent } from "./global/components/nav-bar/nav-bar.component";
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, NavBarComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'factored-front-test';

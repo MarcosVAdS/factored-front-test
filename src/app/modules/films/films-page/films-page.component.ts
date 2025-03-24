@@ -7,8 +7,7 @@ import { CardComponent } from "../../../global/components/card/card.component";
 @Component({
   selector: 'app-films-page',
   imports: [CardComponent],
-  templateUrl: './films-page.component.html',
-  styleUrl: './films-page.component.css'
+  templateUrl: './films-page.component.html'
 })
 export class FilmsPageComponent implements OnInit {
 

@@ -4,8 +4,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 @Component({
   selector: 'app-paginator',
   imports: [CommonModule],
-  templateUrl: './paginator.component.html',
-  styleUrl: './paginator.component.css'
+  templateUrl: './paginator.component.html'
 })
 export class PaginatorComponent implements OnInit {
 
