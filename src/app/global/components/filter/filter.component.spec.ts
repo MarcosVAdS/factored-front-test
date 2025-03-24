@@ -20,4 +20,10 @@ describe('FilterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit the correct data when sendData is called', () => {
+    spyOn(component.searchOutput, 'emit');
+    component.onSearch();
+    expect(component.searchOutput.emit).toHaveBeenCalledWith('');
+  });
 });

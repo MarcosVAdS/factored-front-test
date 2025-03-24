@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilmsPageComponent } from './films-page.component';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('FilmsPageComponent', () => {
   let component: FilmsPageComponent;
@@ -8,6 +9,7 @@ describe('FilmsPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [provideHttpClient()],
       imports: [FilmsPageComponent]
     })
     .compileComponents();
