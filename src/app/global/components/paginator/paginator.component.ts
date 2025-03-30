@@ -3,16 +3,15 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
   OnInit,
   Output,
-  SimpleChanges,
 } from '@angular/core';
 
 @Component({
   selector: 'app-paginator',
   imports: [CommonModule],
   templateUrl: './paginator.component.html',
+  standalone: true,
 })
 export class PaginatorComponent implements OnInit {
   @Input() next: string | null = '';

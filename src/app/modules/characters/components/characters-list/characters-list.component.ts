@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { CharactersService } from '../services/characters.service';
-import { CardComponent } from '../../../global/components/card/card.component';
-import { PaginatorComponent } from '../../../global/components/paginator/paginator.component';
-import { FilterComponent } from '../../../global/components/filter/filter.component';
-import { ApiResponse } from '../../../global/models/api-response.model';
-import { Character } from '../models/character.model';
+import { CharactersService } from '../../services/characters.service';
+import { CardComponent } from '../../../../global/components/card/card.component';
+import { PaginatorComponent } from '../../../../global/components/paginator/paginator.component';
+import { FilterComponent } from '../../../../global/components/filter/filter.component';
+import { ApiResponse } from '../../../../global/models/api-response.model';
+import { Character } from '../../models/character.model';
 import { CommonModule } from '@angular/common';
-import { SkeletonComponent } from '../../../global/components/skeleton/skeleton.component';
+import { SkeletonComponent } from '../../../../global/components/skeleton/skeleton.component';
 
 @Component({
-  selector: 'app-characters-page',
+  selector: 'app-characters-list',
   imports: [
     CardComponent,
     PaginatorComponent,
@@ -17,9 +17,9 @@ import { SkeletonComponent } from '../../../global/components/skeleton/skeleton.
     CommonModule,
     SkeletonComponent,
   ],
-  templateUrl: './characters-page.component.html',
+  templateUrl: './characters-list.component.html',
 })
-export class CharactersPageComponent implements OnInit {
+export class CharactersListComponent implements OnInit {
   loading: boolean = true;
 
   charactersResponse: ApiResponse<Character[]> = {

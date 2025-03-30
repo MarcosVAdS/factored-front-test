@@ -4,5 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-skeleton',
   imports: [],
   templateUrl: './skeleton.component.html',
+  standalone: true,
 })
 export class SkeletonComponent {}

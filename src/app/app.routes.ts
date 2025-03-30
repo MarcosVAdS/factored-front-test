@@ -4,19 +4,14 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () =>
-      import('./modules/home/home.module').then((m) => m.HomeModule),
+    loadComponent: () => import('./modules/home/home.component').then((c) => c.HomeComponent)
   },
   {
     path: 'films',
-    loadChildren: () =>
-      import('./modules/films/films.module').then((m) => m.FilmsModule),
+    loadComponent: () => import('./modules/films/films.component').then((c) => c.FilmsComponent),
   },
   {
     path: 'characters',
-    loadChildren: () =>
-      import('./modules/characters/characters.module').then(
-        (m) => m.CharactersModule,
-      ),
+    loadChildren: () => import('./modules/characters/home.routes').then((r) => r.routes)
   },
 ];

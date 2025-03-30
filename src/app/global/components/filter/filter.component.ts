@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-filter',
   imports: [FormsModule],
   templateUrl: './filter.component.html',
+  standalone: true,
 })
 export class FilterComponent {
   search: string = '';

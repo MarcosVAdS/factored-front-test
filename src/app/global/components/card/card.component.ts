@@ -5,6 +5,7 @@ import { Character } from '../../../modules/characters/models/character.model';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
+  standalone: true,
 })
 export class CardComponent {
   @Input() data!: any;
