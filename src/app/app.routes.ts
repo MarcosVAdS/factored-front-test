@@ -12,6 +12,6 @@ export const routes: Routes = [
   },
   {
     path: 'characters',
-    loadChildren: () => import('./modules/characters/home.routes').then((r) => r.routes)
+    loadChildren: () => import('./modules/characters/characters.routes').then((r) => r.routes)
   },
 ];

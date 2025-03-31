@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Film } from '../../../modules/films/models/film.model';
 import { Character } from '../../../modules/characters/models/character.model';
 
@@ -7,7 +7,11 @@ import { Character } from '../../../modules/characters/models/character.model';
   templateUrl: './card.component.html',
   standalone: true,
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   @Input() data!: any;
   @Input() type: string | undefined;
+
+  ngOnInit(): void {
+    console.log(this.data)
+  }
 }

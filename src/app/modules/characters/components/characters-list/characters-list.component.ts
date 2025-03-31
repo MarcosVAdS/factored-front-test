@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CharactersService } from '../../services/characters.service';
 import { CardComponent } from '../../../../global/components/card/card.component';
 import { PaginatorComponent } from '../../../../global/components/paginator/paginator.component';
@@ -22,19 +22,12 @@ import { SkeletonComponent } from '../../../../global/components/skeleton/skelet
 export class CharactersListComponent implements OnInit {
   loading: boolean = true;
 
-  charactersResponse: ApiResponse<Character[]> = {
+  charactersResponse = signal<ApiResponse<Character[]>>({
     count: 0,
     next: '',
     previous: '',
     results: [],
-  };
-
-  filteredCharactersResponse: ApiResponse<Character[]> = {
-    count: 0,
-    next: '',
-    previous: '',
-    results: [],
-  };
+  });
 
   constructor(private charactersService: CharactersService) {}
 
@@ -45,8 +38,7 @@ export class CharactersListComponent implements OnInit {
   loadCharacters(page: string = ''): void {
     this.charactersService.getCharactersList(page).subscribe({
       next: (response: ApiResponse<Character[]>) => {
-        this.charactersResponse = response;
-        this.filteredCharactersResponse = response;
+        this.charactersResponse.set(response);
       },
       error: (error) => {
         console.error(error);
@@ -58,12 +50,13 @@ export class CharactersListComponent implements OnInit {
   }
 
   onSearch(search: string): void {
+    console.log(search)
     if (search === '') {
       this.loadCharacters();
       return;
     }
-    this.filteredCharactersResponse.results =
-      this.charactersResponse.results.filter((item: Record<string, any>) =>
+    this.charactersResponse().results =
+      this.charactersResponse().results.filter((item: Record<string, any>) =>
         Object.values(item).some((value: any) =>
           String(value).toLowerCase().includes(search.toLowerCase()),
         ),

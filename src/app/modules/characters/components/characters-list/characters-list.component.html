@@ -20,18 +20,18 @@
         <app-skeleton></app-skeleton>
       }
       @if (!loading) {
-        @for (character of filteredCharactersResponse.results; track character) {
+        <div *ngFor="let character of charactersResponse().results">
           <app-card [data]="character" [type]="'character'"></app-card>
-        }
+        </div> 
       }
     </div>
   
-    @if (charactersResponse.count > 0) {
+    @if (charactersResponse().next || charactersResponse().previous) {
       <app-paginator
-        [next]="charactersResponse.next"
-        [previous]="charactersResponse.previous"
-        [count]="charactersResponse.count"
-        [pageSize]="charactersResponse.results.length"
+        [next]="charactersResponse().next"
+        [previous]="charactersResponse().previous"
+        [count]="charactersResponse().count"
+        [pageSize]="charactersResponse().results.length"
         (pageChange)="onPageChange($event)"
       >
       </app-paginator>
