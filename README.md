@@ -1,6 +1,8 @@
 ## Factored homework test
-
 Project developed as homework test to [Factored](https://www.factored.ai/)
+
+#### Branchs
+The project contains a diferent branch ```update-to-component``` to use diferent angular solutions to the same project.
 
 ## 💻 Tech stack:
 
